@@ -1,0 +1,2 @@
+import { test } from '@playwright/test'; import { BeneficiaryPage } from '../../pages/BeneficiaryPage';
+test('BEN-V02 allocation below 100 blocks progression @regression',async({page})=>{ await page.goto('/applications/TEST/beneficiaries'); const p=new BeneficiaryPage(page); await p.add({firstName:'Ravi',lastName:'Rao',dob:'02/10/1988',relationship:'Spouse',allocation:'50'}); await p.expectAllocationError(); });

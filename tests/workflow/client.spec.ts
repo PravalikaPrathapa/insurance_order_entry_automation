@@ -1,0 +1,2 @@
+import { test } from '@playwright/test'; import { ClientInformationPage } from '../../pages/ClientInformationPage';
+test('CLI-V05 future DOB is rejected @regression',async({page})=>{ await page.goto('/applications/new'); const p=new ClientInformationPage(page); await p.fillClient({firstName:'Test',lastName:'Future',dob:'01/01/2099',email:'test@example.test',phone:'9876543210'}); await p.next(); await p.expectValidation(); });
