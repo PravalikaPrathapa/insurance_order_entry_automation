@@ -3,3 +3,4 @@ reports/html-report/
 test-results/
 playwright-report/
 .env
+.DS_Store
